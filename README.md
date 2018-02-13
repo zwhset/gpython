@@ -16,4 +16,6 @@
     ├── schulte_grid.py 舒尔特方格
     ├── weboot.py 微信聊天机器人
     └── youku.py 搜索youku页面自动打开
+└── other
+    ├── zmfr.py gmap gfilter的自己实现方式
 ```

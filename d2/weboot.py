@@ -21,12 +21,12 @@
 import itchat
 import requests
 
-def xiao_ai(say):
+def xiao_ai(say, user_id):
     '''调用聚合机器人接口实现自动回复，逻辑层次可以在这里面加'''
     url = 'http://op.juhe.cn/robot/index'
     params = {
         'info' : say,
-        'userid' : 1,
+        'userid' : user_id,
         'key' : '978f281744b2cda30642dbbaf3eb8349'
     }
     r = requests.get(url, params)
@@ -45,7 +45,8 @@ def xiao_ai(say):
 @itchat.msg_register(itchat.content.TEXT)
 def recv_content(msg):
     say = msg['Text']
-    itchat.send(xiao_ai(say)) # 呼叫小爱同学
+    user_id = msg.get('FromUserName', '@0') # 获取用户ID
+    itchat.send(xiao_ai(say, user_id)) # call xiaoai
 
 if __name__ == '__main__':
     itchat.auto_login(enableCmdQR=2) # hotReload=True

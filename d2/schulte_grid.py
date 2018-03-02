@@ -28,4 +28,4 @@ def schulte(n):
         print '|'
         i += n
 
-schulte(5)
+schulte(7)

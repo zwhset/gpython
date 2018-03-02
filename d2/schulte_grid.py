@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import print_function
 """
     package.module
     ~~~~~~~~~~~~~~
@@ -15,17 +16,17 @@ def schulte(n):
 
     # 打乱数字
     max = n * n
-    numbers = range(1, max+1)
+    numbers = list(range(1, max+1)) # 兼容py3
     random.shuffle(numbers)
 
     # 格式化输出
-    print
+    print()
     i = 0
     while i < max:
-        print '|\t',
+        print('|\t', end='')
         for x in numbers[i: i+n]:
-            print x, '\t',
-        print '|'
+            print(x, '\t', end='')
+        print('|')
         i += n
 
 schulte(7)

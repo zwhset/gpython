@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from flask_socketio import SocketIO, rooms
 
 app = Flask(__name__)
@@ -8,8 +8,14 @@ app.config['SECRET_KEY'] = 'sldjfalsfnwlemnw'
 
 socketio = SocketIO(app)
 
+# 添加url跳转，免得人直接访问 / 不知道怎么办
+@app.route('/')
+@app.route('/chats')
+def index():
+    return redirect('/chats/1')
+
 @app.route('/chats/<int:room_id>')
-def index(room_id):
+def chats(room_id=1):
     return render_template('chat.html', room_id=room_id)
 
 @socketio.on('chat_send')

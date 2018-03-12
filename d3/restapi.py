@@ -5,6 +5,9 @@
 
     python实现的图书的一个restful api.
 
+    参考restful设计指南 URL：
+        http://www.ruanyifeng.com/blog/2014/05/restful_api.html
+
     restful api 一般模式：
         GET（SELECT）：从服务器取出资源（一项或多项）。
         POST（CREATE）：在服务器新建一个资源。

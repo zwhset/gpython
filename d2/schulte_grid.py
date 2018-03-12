@@ -21,6 +21,7 @@ def schulte(n):
 
     # 格式化输出
     print()
+    print('-' * 25)
     i = 0
     while i < max:
         print('|\t', end='')
@@ -28,5 +29,6 @@ def schulte(n):
             print(x, '\t', end='')
         print('|')
         i += n
+    print('-' * 25)
 
-schulte(7)
+schulte(5)

@@ -9,3 +9,10 @@
     :license: GOMEOPS, see LICENSE_FILE for more details.
 """
 
+
+query = """
+    SELECT 
+        id, name
+    FROM
+        users
+"""

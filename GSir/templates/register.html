@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/static/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/sbadmin/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .reg {
+            float: right;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <!--通知消息处-->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}" style="text-align: center">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                <strong>{{ message }}</strong></div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Register </h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="POST">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label>手机号：</label>
+                                    <label class="input-inline">
+                                        <input class="form-control" placeholder="请输入手机号" name="phone" pattern="^1[3|4|5|8][0-9]\d{4,8}$" value="{{ phone }}" required>
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>用户名：</label>
+                                    <label class="input-inline">
+                                         <input class="form-control" placeholder="请输入用户名" name="username" value="{{ username }}" required>
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                     <label>密&nbsp;&nbsp;码：</label>
+                                    <label class="input-inline">
+                                         <input class="form-control" placeholder="请输入密码" name="password" type="password" value="" required>
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>密&nbsp;&nbsp;码：</label>
+                                    <label class="input-inline">
+                                         <input class="form-control" placeholder="请再次输入密码" name="password2" type="password" value="" required>
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>微&nbsp;&nbsp;信：</label>
+                                    <label class="input-inline">
+                                         <input class="form-control" placeholder="请输入微信帐号" name="wechat" value="wechat">
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        选择性别：
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" value="1"  {% if not sex %} checked {% endif %}> 男
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" value="0" {% if sex %} checked {% endif %}> 女
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <input class="btn btn-lg btn-success btn-block" type="submit" value="注册">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="/static/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/static/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/static/sbadmin/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

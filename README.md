@@ -1,7 +1,7 @@
-# 说明
+### 说明
 > d{x} 即第几天的代码
 
-# 目录结构
+### 目录结构
 
 ```json
 .
@@ -19,3 +19,6 @@
 └── other
     ├── zmfr.py gmap gfilter的自己实现方式
 ```
+
+### 加强练习100题
+http://www.runoob.com/python/python-100-examples.html

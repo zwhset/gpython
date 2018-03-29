@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+# 作者： 煮酒品茶
+
 """
     package.module
     ~~~~~~~~~~~~~~
@@ -59,6 +62,7 @@ def handle_book(id):
 @app.route('/api/book', methods=['POST'])
 def create_book():
     book = request.json
+    print book, type(book)
 
     # check params
     if  ((not 'title' in book and 'author' in book) or
